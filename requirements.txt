@@ -1,0 +1,11 @@
+Flask
+Flask-SQLAlchemy
+Flask-Cors
+requests
+python-dotenv
+google-generativeai
+PyMySQL
+gunicorn
+PyPDF2
+Flask-Migrate
+mysql-connector-python
