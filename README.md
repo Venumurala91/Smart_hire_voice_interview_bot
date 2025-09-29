@@ -2,75 +2,69 @@
 AI-powered recruitment assistant that shortlists resumes and conducts automated first-round voice interviews, delivering instant insights to recruiters.
 
 
+Got it ✅
+I’ll polish your **README.md** so it’s **clear, beginner-friendly, and professional** — making sure that **any new developer or recruiter** can quickly understand **what this project is, why it’s useful, and how to run it**.
 
-
-Here’s a polished and attractive **`README.md`** version for your AI Voice Interview Bot that will grab attention, be easy to read, and showcase your work professionally.  
+Here’s the cleaned-up version 👇
 
 ---
 
-```markdown
-# 🎙️ AI Voice Interview Bot
+````markdown
+# 🎙️ Smart Hire – AI Voice Interview Bot
 
 > **Automated. Intelligent. Hassle-free Candidate Screening.**  
-A **full-stack AI-powered voice assistant** that screens job candidates, analyzes resumes, conducts phone interviews, and delivers actionable hiring insights — all without human intervention.
+An **AI-powered recruitment assistant** that shortlists resumes, conducts voice interviews, and delivers instant insights to recruiters.
 
 ---
 
 ## 🚀 Why This Project?
 
-Recruiters spend **hours** screening resumes and scheduling interviews.  
-The **AI Voice Interview Bot** cuts this process down to **minutes** by:
+Recruiters spend **hours** filtering resumes and scheduling interviews.  
+The **AI Voice Interview Bot** reduces this process to **minutes** by:
 
-- Reading resumes like an **ATS (Applicant Tracking System)**
-- Calling candidates for **automated voice interviews**
-- Providing **data-backed hiring insights** instantly
+- Screening resumes with ATS-style scoring  
+- Conducting **automated first-round voice interviews**  
+- Delivering **transcripts, analytics, and hiring recommendations** instantly  
+
+This ensures **faster hiring decisions** and saves recruiters valuable time.
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-✅ **AI-Powered Resume Screening**  
-Upload multiple resumes against a job description to get ATS-style match scores.
-
-✅ **Automated AI Phone Interviews**  
-Initiates AI-driven calls with relevant job-specific questions.
-
-✅ **Detailed Interview Analytics**  
-Full transcript, overall score, and breakdowns for:
-- Communication Skills
-- Technical Knowledge
-- Role Relevance
-
-✅ **Interactive Recruiter Dashboard**  
-Track candidates, see who’s next in the queue, and review recent activity.
-
-✅ **Searchable Talent Pool**  
-Maintain a reusable database of all interviewed candidates.
+- ✅ **Resume Screening with AI** – Upload resumes and match them against job descriptions.  
+- ✅ **Automated Voice Interviews** – AI calls candidates with job-specific questions.  
+- ✅ **Detailed Analytics** – Get transcripts, skill breakdowns, and overall candidate scores.  
+- ✅ **Recruiter Dashboard** – Track candidate progress and review insights.  
+- ✅ **Searchable Talent Pool** – Maintain a database of all past candidates.  
 
 ---
 
 ## 🛠 Tech Stack
 
-**Backend:** Flask, SQLAlchemy, MySQL  
-**Frontend:** HTML, CSS, JavaScript (No frameworks — fully custom UI)  
-**AI & Voice:**  
-- [VAPI](https://vapi.ai) — AI call orchestration  
-- [Google Gemini](https://deepmind.google/technologies/gemini/) — Resume & call analysis  
-- [Twilio](https://www.twilio.com/) — Phone number & call infrastructure  
+- **Backend:** Flask, SQLAlchemy, MySQL  
+- **Frontend:** HTML, CSS, JavaScript (custom UI)  
+- **AI & Voice Services:**  
+  - [VAPI](https://vapi.ai) – AI call orchestration  
+  - [Google Gemini](https://deepmind.google/technologies/gemini/) – Resume & call analysis  
+  - [Twilio](https://www.twilio.com/) – Phone call infrastructure  
+  - [ngrok](https://ngrok.com/) – Expose local server for webhooks  
 
 ---
 
 ## ⚙️ Setup & Installation
 
+Follow these steps to set up the project locally:
+
 ### 1️⃣ Clone the Repository
 ```bash
 git clone <your-repository-url>
-cd vapi-ai_voice_project
-```
+cd Smart_hire_voice_interview_bot
+````
 
-### 2️⃣ Set Up Python Environment
+### 2️⃣ Create Virtual Environment
+
 ```bash
-# Create virtual environment
 python -m venv env
 
 # Activate (Windows)
@@ -81,12 +75,15 @@ source env/bin/activate
 ```
 
 ### 3️⃣ Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Configure Environment Variables  
-Create a `.env` file in the root directory with:
+### 4️⃣ Configure Environment Variables
+
+Create a `.env` file in the root directory with the following:
+
 ```env
 VAPI_API_KEY="<YOUR_VAPI_PRIVATE_KEY>"
 VAPI_PHONE_NUMBER_ID="<YOUR_VAPI_PHONE_NUMBER_ID>"
@@ -95,8 +92,9 @@ DATABASE_URI="mysql+mysqlconnector://root:password@localhost/ai_db"
 ```
 
 ### 5️⃣ Set Up MySQL Database
+
 ```bash
-# Inside backend/
+cd backend
 flask db init
 flask db migrate -m "Initial database setup"
 flask db upgrade
@@ -104,47 +102,63 @@ flask db upgrade
 
 ---
 
-## ▶️ Running the App
+## ▶️ Running the Application
 
-### Backend (Flask API)
+### Start Backend (Flask API)
+
 ```bash
 cd backend
 python app.py
 ```
-Backend will be live at: **http://127.0.0.1:5000**
 
-### ngrok (Webhook for VAPI)
+Your backend will be live at: **[http://127.0.0.1:5000](http://127.0.0.1:5000)**
+
+### Expose API with ngrok
+
 ```bash
 ngrok http 5000
 ```
-Use the generated `https://...ngrok-free.app` URL for VAPI webhook.
 
-**Example:**  
+Use the generated `https://...ngrok-free.app` URL as the webhook for **VAPI**.
+
+Example:
 `https://random-string.ngrok-free.app/api/webhook`
 
 ---
 
-## 🌐 External Services You’ll Need
-- **VAPI:** Core AI voice agent (connects to Twilio & Gemini)  
-- **Twilio:** To manage phone numbers & calling  
-- **ngrok:** For public webhook access to your local backend  
+## 📊 Workflow – How It Works
 
----
-
-## 📊 How It Works
-
-1. **Upload Resumes** → Bot scores them using Gemini AI  
-2. **Call Candidates** → Automated phone interviews via VAPI + Twilio  
-3. **Analyze & Report** → Scores, transcripts, and recruiter-friendly insights  
-4. **Search & Reuse** → Store all candidates for future openings  
+1. **Upload Resumes** → AI scores them using Gemini.
+2. **Voice Interview** → Candidate receives a phone call with job-related questions.
+3. **Analysis Report** → Transcript + scores (communication, technical skills, relevance).
+4. **Recruiter Dashboard** → Review insights & maintain candidate database.
 
 ---
 
 ## 📸 Screenshots
-> *(Add screenshots of dashboard, resume analysis, and interview reports here)*  
+
+*(Add screenshots of the recruiter dashboard, resume analysis, and interview reports here.)*
 
 ---
 
 ## 🤝 Contributing
-Pull requests are welcome! For major changes, open an issue first to discuss what you'd like to change.
+
+Contributions are welcome!
+
+* Fork the repo
+* Create a new branch
+* Make your changes
+* Submit a pull request
+
+---
+
+## 📧 Support
+
+If you face issues while setting up or running the project, feel free to open an **issue** in the repository.
+
+---
+
+```
+
+---
 
